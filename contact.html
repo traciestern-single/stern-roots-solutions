@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Stern Roots Solutions</title>
+
+    <meta
+        name="description"
+        content="Connect with Tracie Stern about home renovation and design guidance, legacy information, Single™, or other Stern Roots Solutions services."
+    >
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico" sizes="any">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+
+            <a href="index.html" class="brand" aria-label="Stern Roots Solutions home">
+                <img
+                    src="assets/images/stern-roots-logo.jpg"
+                    alt="Stern Roots Solutions"
+                    class="brand-logo"
+                >
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="site-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="site-navigation" class="site-nav" aria-label="Main navigation">
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#venture">Current Venture</a>
+                <a href="contact.html" class="nav-contact">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="contact-hero">
+            <div class="section-inner contact-hero-inner">
+
+                <p class="eyebrow">Stern Roots Solutions</p>
+
+                <h1>Let's Connect</h1>
+
+                <p class="contact-intro">
+                    Tell me a little about what brought you here, and I'll
+                    personally follow up.
+                </p>
+
+            </div>
+        </section>
+
+
+        <section class="contact-section">
+            <div class="section-inner contact-grid">
+
+                <div class="contact-form-wrap">
+
+                    <form id="contact-form" class="contact-form">
+
+                        <div class="form-field">
+                            <label for="name">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-field">
+                                <label for="email">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    autocomplete="email"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-field">
+                                <label for="phone">Phone</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    autocomplete="tel"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                        <div class="form-field">
+                            <label for="interest">What can I help you with?</label>
+
+                            <select id="interest" name="interest" required>
+                                <option value="" selected disabled>
+                                    Select one
+                                </option>
+                                <option value="Bathroom Consulting">
+                                    Bathroom Consulting
+                                </option>
+                                <option value="Home Renovation & Design">
+                                    Home Renovation &amp; Design
+                                </option>
+                                <option value="Legacy Information">
+                                    Legacy Information
+                                </option>
+                                <option value="Single">
+                                    Single™
+                                </option>
+                                <option value="Something Else / I'm Not Sure Yet">
+                                    Something Else / I'm Not Sure Yet
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="message">
+                                Tell me a little more
+                                <span class="optional">(optional)</span>
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                            ></textarea>
+                        </div>
+
+                        <!-- Reserved for lead-source tracking -->
+                        <input type="hidden" id="lead-source" name="lead_source">
+
+                        <button type="submit" class="button button-primary">
+                            Request a Follow-Up
+                        </button>
+
+                    </form>
+
+
+                    <div
+                        id="contact-success"
+                        class="contact-success"
+                        hidden
+                        aria-live="polite"
+                    >
+                        <p class="eyebrow">Message Received</p>
+
+                        <h2>Thank you.</h2>
+
+                        <p>
+                            Your message has been received. I'll be in touch soon.
+                        </p>
+
+                        <p>
+                            If you'd prefer to speak with someone, you can also call
+                            Stern Roots Solutions at
+                            <a href="tel:+17577828549">757-782-8549</a>.
+                            Rachael, our virtual receptionist, will be happy to take
+                            your information and make sure it reaches me.
+                        </p>
+
+                        <p class="success-signoff">— Tracie</p>
+                    </div>
+
+                </div>
+
+
+                <aside class="contact-details">
+
+                    <p class="eyebrow">Direct Contact</p>
+
+                    <h2>Prefer to reach out directly?</h2>
+
+                    <div class="contact-method">
+                        <span class="contact-label">Call</span>
+
+                        <a href="tel:+17577828549">
+                            757-782-8549
+                        </a>
+
+                        <p>
+                            Calls are answered by Rachael, our virtual receptionist.
+                        </p>
+                    </div>
+
+                    <div class="contact-method">
+                        <span class="contact-label">Email</span>
+
+                        <a href="mailto:connect@sternrootssolutions.com">
+                            connect@sternrootssolutions.com
+                        </a>
+                    </div>
+
+                    <div class="contact-note">
+                        <p>
+                            Not sure which category fits? That's perfectly fine.
+                            Choose “Something Else / I'm Not Sure Yet” and tell me
+                            what's on your mind.
+                        </p>
+                    </div>
+
+                </aside>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="section-inner footer-inner">
+
+            <div class="footer-brand">
+                <p>Stern Roots Solutions</p>
+                <span>Protecting Homes. Planning Legacies.</span>
+            </div>
+
+            <div class="footer-contact">
+                <a href="tel:+17577828549">757-782-8549</a>
+                <a href="mailto:connect@sternrootssolutions.com">
+                    connect@sternrootssolutions.com
+                </a>
+            </div>
+
+            <p class="copyright">
+                © 2026 Stern Roots Solutions, LLC. All Rights Reserved.
+            </p>
+
+        </div>
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
+
