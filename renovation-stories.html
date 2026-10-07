@@ -21,7 +21,7 @@ footer{padding:42px 0;background:#11231c;color:rgba(255,255,255,.72)}.footer{dis
 <body>
 <header><div class="wrap header"><a href="index.html"><img class="logo" src="assets/images/stern-roots-logo.jpg" alt="Stern Roots Solutions"></a><a class="home" href="index.html">Back to Home</a></div></header>
 
-<section class="hero"><div class="wrap"><p class="eyebrow">Stern Roots Solutions</p><h1>Renovation Stories</h1><p class="lead">Years of renovation experience, one project at a time. Choose a collection to explore the transformations.</p></div></section>
+<section class="hero"><div class="wrap"><p class="eyebrow">Stern Roots Solutions</p><h1>Renovation Stories</h1><p class="lead">Years of renovation experience, one transformation at a time. Explore a selection of projects that reflect my approach to thoughtful design, practical problem-solving, and creating spaces that work beautifully for the people who live in them.</p></div></section>
 
 <main class="wrap">
 <section id="categories" class="view active">
@@ -32,7 +32,7 @@ footer{padding:42px 0;background:#11231c;color:rgba(255,255,255,.72)}.footer{dis
 <div class="album-copy"><h3>Whole Home Renovations</h3><p>View project albums</p></div>
 </button>
 <button class="album" onclick="showView('bathrooms')">
-<div class="placeholder">Bathroom projects coming next</div>
+<img src="assets/images/mastersuite1.jpg" alt="Bathroom Renovations">
 <div class="album-copy"><h3>Bathroom Renovations</h3><p>View project albums</p></div>
 </button>
 </div>
@@ -62,14 +62,31 @@ footer{padding:42px 0;background:#11231c;color:rgba(255,255,255,.72)}.footer{dis
 
 <section id="bathrooms" class="view">
 <div class="view-head"><div><p class="eyebrow">Bathroom Renovations</p><h2>Project Albums</h2></div><button class="back" onclick="showView('categories')">← Back to Renovation Stories</button></div>
-<div class="placeholder" style="min-height:320px">Bathroom renovation albums will appear here.</div>
+<div class="project-grid">
+
+<button class="album" onclick="openGallery('tubToTub')">
+<img src="assets/images/tubtotub1.jpg" alt="Tub to Tub">
+<div class="album-copy"><h3>Tub to Tub</h3><p>2 photos</p></div>
+</button>
+
+<button class="album" onclick="openGallery('masterBath')">
+<img src="assets/images/masterbath1.jpg" alt="Master Bath">
+<div class="album-copy"><h3>Master Bath</h3><p>5 photos</p></div>
+</button>
+
+<button class="album" onclick="openGallery('masterSuite')">
+<img src="assets/images/mastersuite1.jpg" alt="Master Suite">
+<div class="album-copy"><h3>Master Suite</h3><p>6 photos</p></div>
+</button>
+
+</div>
 </section>
 </main>
 
 <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="The Carriage House photo album">
 <button class="close" onclick="closeGallery()" aria-label="Close">&times;</button>
 <button class="prev" onclick="move(-1)" aria-label="Previous photo">&lsaquo;</button>
-<img id="gallery-image" src="" alt="The Carriage House renovation">
+<img id="gallery-image" src="" alt="">
 <button class="next" onclick="move(1)" aria-label="Next photo">&rsaquo;</button>
 <div id="counter" class="counter"></div>
 </div>
@@ -118,6 +135,27 @@ const albums = {
         "assets/images/countryroadhouse12.jpg"
     ]
 
+    ,tubToTub: [
+        "assets/images/tubtotub1.jpg",
+        "assets/images/tubtotub2.jpg"
+    ],
+
+    masterBath: [
+        "assets/images/masterbath1.jpg",
+        "assets/images/masterbath2.jpg",
+        "assets/images/masterbath3.jpg",
+        "assets/images/masterbath4.jpg",
+        "assets/images/masterbath5.jpg"
+    ],
+
+    masterSuite: [
+        "assets/images/mastersuite1.jpg",
+        "assets/images/mastersuite2.png",
+        "assets/images/mastersuite3.jpg",
+        "assets/images/mastersuite4.png",
+        "assets/images/mastersuite5.jpg",
+        "assets/images/mastersuite6.png"
+    ]
 };
 
 let activeAlbum = [];
@@ -155,6 +193,8 @@ function move(n) {
 
 function render() {
     document.getElementById("gallery-image").src = activeAlbum[current];
+    document.getElementById("gallery-image").alt =
+        activeAlbumName + " renovation photo " + (current + 1);
 
     document.getElementById("counter").textContent =
         (current + 1) + " / " + activeAlbum.length;
@@ -178,6 +218,23 @@ document.getElementById("lightbox").addEventListener("click", e => {
         closeGallery();
     }
 
+});
+</script>
+<script>
+document.addEventListener("contextmenu", function (event) {
+    if (event.target.closest(".album img, #gallery-image")) {
+        event.preventDefault();
+    }
+});
+
+document.addEventListener("dragstart", function (event) {
+    if (event.target.closest(".album img, #gallery-image")) {
+        event.preventDefault();
+    }
+});
+
+document.querySelectorAll(".album img, #gallery-image").forEach(function (img) {
+    img.setAttribute("draggable", "false");
 });
 </script>
 </body>
